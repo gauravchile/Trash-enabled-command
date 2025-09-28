@@ -33,22 +33,22 @@ chmod +x trash.sh
 
 Optional: Alias rm to trash script:
 
-alias rm="/usr/local/bin/trash.sh"
-Now rm file.txt moves files to trash instead of deleting them.
+alias trm="/usr/local/bin/trash.sh"
+Now trm file.txt moves files to trash instead of deleting them.
 
 **Usage:**
 Move files to trash (default)
 
-rm file1.txt "file[@].txt"
+trm file1.txt "file[@].txt"
 
 **Restore files:**
 
-rm --restore file1.txt_1695901234
+trm --restore file1.txt_1695901234
 
 
 **Permanently delete files:**
 
-rm --del file1.txt_1695901234
+trm --del file1.txt_1695901234
 
 **Check trash folder:**
 
@@ -56,7 +56,7 @@ ls $HOME/.local/share/Trash/files
 
 **Add alias for all users:**
 
-echo 'alias rm="/usr/local/bin/trash.sh"' | sudo tee -a /etc/bash.bashrc
+echo 'alias trm="/usr/local/bin/trash.sh"' | sudo tee -a /etc/bash.bashrc
 
 source /etc/bash.bashrc
 

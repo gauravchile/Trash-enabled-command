@@ -70,10 +70,17 @@ sudo chmod -R 700 /etc/skel/.local/share/Trash
 
 **Make the message appear on login (optional):**
 
-sudo tee -a /etc/motd << 'EOF'
+****sudo tee -a /etc/motd << 'EOF'
+
 ====================================
+
 Use 'trm <file>' to safely move files to trash instead of deleting.
+
 Restore: trm --restore <filename>
+
 Permanently delete: trm --del <filename>
+
 ====================================
+
 EOF
+****

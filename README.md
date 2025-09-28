@@ -1,4 +1,4 @@
-# Custom Trash-Enabled `rm` Command
+# Custom Trash-Enabled Command
 
 ## Project Overview
 This project implements a **safe custom `rm` command** for Linux systems that moves deleted files to a **trash directory** instead of permanently deleting them.  
@@ -68,4 +68,12 @@ sudo mkdir -p /etc/skel/.local/share/Trash/files_info
 
 sudo chmod -R 700 /etc/skel/.local/share/Trash
 
+**Make the message appear on login (optional):**
 
+sudo tee -a /etc/motd << 'EOF'
+====================================
+Use 'trm <file>' to safely move files to trash instead of deleting.
+Restore: trm --restore <filename>
+Permanently delete: trm --del <filename>
+====================================
+EOF

@@ -42,7 +42,7 @@ case "$cmd" in
 
       # Prevent overwriting in trash
       base="$(basename "$abs_f")"
-      ts=$(date +%s)
+      ts=$(date +%H-%M)
       dest="$TRASH/${base}_$ts"
 
       mv "$abs_f" "$dest"

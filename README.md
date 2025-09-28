@@ -38,25 +38,34 @@ Now rm file.txt moves files to trash instead of deleting them.
 
 **Usage:**
 Move files to trash (default)
+
 rm file1.txt "file[@].txt"
 
 **Restore files:**
+
 rm --restore file1.txt_1695901234
 
 
 **Permanently delete files:**
+
 rm --del file1.txt_1695901234
 
 **Check trash folder:**
+
 ls $HOME/.local/share/Trash/files
 
 **Add alias for all users:**
+
 echo 'alias rm="/usr/local/bin/trash.sh"' | sudo tee -a /etc/bash.bashrc
+
 source /etc/bash.bashrc
 
 **Optional: Set up trash directories for all new users:**
+
 sudo mkdir -p /etc/skel/.local/share/Trash/files
+
 sudo mkdir -p /etc/skel/.local/share/Trash/files_info
+
 sudo chmod -R 700 /etc/skel/.local/share/Trash
 
 

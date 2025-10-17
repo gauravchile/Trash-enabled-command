@@ -55,7 +55,7 @@ alias trm="/usr/local/bin/trash.sh"
 ### Move files to trash (default)
 
 ```bash
-trm file1.txt "file[@].txt"
+trm file1.txt
 ```
 
 ### Restore files

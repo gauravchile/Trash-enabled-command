@@ -1,86 +1,112 @@
-# Custom Trash-Enabled Command
+# 🗑️ Custom Trash-Enabled Command
 
-## Project Overview
-This project implements a **safe custom `rm` command** for Linux systems that moves deleted files to a **trash directory** instead of permanently deleting them.  
-It also supports restoring files to their original directory and permanent deletion from the trash.
+## 🚀 Project Overview
+
+This project implements a **safe custom `rm` command** for Linux systems that moves deleted files to a **trash directory** instead of permanently deleting them. 💾
+
+It also supports restoring files to their original directory and permanently deleting files from the trash.
 
 **Project Objectives:**
-- Protect your files from accidental deletion.
-- Learn shell scripting and environment variable management.
-- Understand aliasing and custom command creation.
+
+* 🛡️ Protect your files from accidental deletion
+* 💻 Learn shell scripting and environment variable management
+* 🔧 Understand aliasing and custom command creation
 
 ---
 
-## Project Structure
+## 📁 Project Structure
 
+```
 custom-trash-rm/
-
- trash.sh # Main script implementing trash functionality
- README.md # Project documentation
- test_files/ # Folder to create test files
+├── trash.sh        # Main script implementing trash functionality
+├── README.md       # Project documentation
+└── test_files/     # Folder to create test files
+```
 
 ---
 
-## Setup
+## ⚙️ Setup
 
-1. **Clone the repository** (or create your folder)
+1. **Clone the repository** (or create your folder):
 
+```bash
 git clone <your-repo-url>
 cd custom-trash-rm
-Make script executable:
+```
 
+2. **Make the script executable**:
+
+```bash
 chmod +x trash.sh
+```
 
-Optional: Alias rm to trash script:
+3. **Optional: Alias `rm` to trash script**:
 
+```bash
 alias trm="/usr/local/bin/trash.sh"
-Now trm file.txt moves files to trash instead of deleting them.
+```
 
-**Usage:**
-Move files to trash (default)
+> Now `trm file.txt` moves files to trash instead of deleting them.
 
+---
+
+## 📝 Usage
+
+### Move files to trash (default)
+
+```bash
 trm file1.txt "file[@].txt"
+```
 
-**Restore files:**
+### Restore files
 
+```bash
 trm --restore file1.txt_1695901234
+```
 
+### Permanently delete files
 
-**Permanently delete files:**
-
+```bash
 trm --del file1.txt_1695901234
+```
 
-**Check trash folder:**
+### Check trash folder
 
+```bash
 ls $HOME/.local/share/Trash/files
+```
 
-**Add alias for all users:**
+---
 
+## 🔧 Optional Configuration
+
+### Add alias for all users
+
+```bash
 echo 'alias trm="/usr/local/bin/trash.sh"' | sudo tee -a /etc/bash.bashrc
-
 source /etc/bash.bashrc
+```
 
-**Optional: Set up trash directories for all new users:**
+### Set up trash directories for all new users
 
+```bash
 sudo mkdir -p /etc/skel/.local/share/Trash/files
-
 sudo mkdir -p /etc/skel/.local/share/Trash/files_info
-
 sudo chmod -R 700 /etc/skel/.local/share/Trash
+```
 
-**Make the message appear on login (optional):**
+### Make a login message appear (optional)
 
-****sudo tee -a /etc/motd << 'EOF'
-
+```bash
+sudo tee -a /etc/motd << 'EOF'
 ====================================
-
-Use 'trm <file>' to safely move files to trash instead of deleting.
-
+🗑️ Use 'trm <file>' to safely move files to trash instead of deleting.
 Restore: trm --restore <filename>
-
 Permanently delete: trm --del <filename>
-
 ====================================
-
 EOF
-****
+```
+
+---
+
+✨ **Now you can manage your files safely and avoid accidental deletion!**

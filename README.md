@@ -103,6 +103,7 @@ sudo tee -a /etc/motd << 'EOF'
 🗑️ Use 'trm <file>' to safely move files to trash instead of deleting.
 Restore: trm --restore <filename>
 Permanently delete: trm --del <filename>
+List contents of trash: trm --list
 ====================================
 EOF
 ```

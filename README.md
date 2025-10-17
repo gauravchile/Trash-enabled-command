@@ -30,8 +30,8 @@ custom-trash-rm/
 1. **Clone the repository** (or create your folder):
 
 ```bash
-git clone <your-repo-url>
-cd custom-trash-rm
+git clone https://github.com/gauravchile/Trash-enabled-command.git
+cd Trash-enabled-command
 ```
 
 2. **Make the script executable**:

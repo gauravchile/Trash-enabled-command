@@ -61,13 +61,13 @@ trm file1.txt
 ### Restore files
 
 ```bash
-trm --restore file1.txt_1695901234
+trm --restore file1.txt
 ```
 
 ### Permanently delete files
 
 ```bash
-trm --del file1.txt_1695901234
+trm --del file1.txt
 ```
 
 ### Check trash folder
